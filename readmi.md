@@ -186,3 +186,31 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     -/src/index.js
 
 - Quá trình: App.js -> index.js -> index.html -> Browser
+
+### Components:
+
+-> là thành phần giúp phân chia các UI thành các phần nhỏ dễ quản lý và tái sử dụng
+-> Ví dụ: header,footer,...
+-> Các bước tạo components:
+
+# Bước 1: Tạo trong folder "src" tạo 1 folader mới tên là components
+
+# Bước 2: Trong folder components tạo 1 folder theo đúng ý nghĩa của khối . Ví dụ header -> Header
+
+# Bước 3: Tạo 1 file js viết code -> sau đó export default
+
+# Bước 4: Import vào file muốn sử dụng componets đó
+
+### Props:
+
+-> Là 1 object cho phép được truyền vào trong 1 components
+-> Cho phép chúng ta giao tiếp giữa các components với nhau bằng cách truyền tham số qua lại giữa các components
+-> Khi 1 components cha truyề cho con một props thì components con chỉ có thể đọc và ko có quyền chỉnh sửa nó bên phía components cha
+-> Cách truyền một props cũng giống như cách mà bạn thêm một attributes cho 1 elements HTML
+-> Props có thể nhận giá trị là tất cả kiểu dữ liệu: + Nguyên thủy: String, Number,Boolean,Undefined,Null,Symbol + Phức tạp: Function,Object(Object,Array)
+
+### Events:
+
+-> Xử lý các sự kiện trong React giống với Javascript nhưng có 1 số khác biệt về cú pháp
+-> Tuân theo quy tắc camelCase
+-> Ví dụ: onClick,onChange,onSubmit,onFocus,onBlur,...
