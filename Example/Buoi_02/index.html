@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // # user DOM JavaScript
+      const h1 = document.createElement("h1");
+
+      // # user Object set value
+      Object.assign(h1, {
+        title: "Hello",
+        textContent: "Hello World! - DOM JavaScript",
+        className: "header",
+      });
+
+      // # user setAttribute st value
+      h1.setAttribute("data-title", "X");
+      document.body.appendChild(h1);
+      console.dir(h1);
+
+      // # user React: React.createElement(type,props,children_1,....) -> children the same props
+      /* const h1React = React.createElement(
+        # type
+        "h1",
+        {
+           // # props
+          title: "Hello",
+          className: "header",
+          id: "header",
+          style: 'color: red; font-size:12px',
+        },
+        "Hello World! - React"
+      );
+      ReactDOM.render(h1React, document.body);
+      console.dir(h1React);
+      */
+
+      // emxample 02:
+      // # user DOM Javascript
+      const list = document.createElement("ul");
+      const items_first = document.createElement("li");
+      items_first.textContent = "Javascript";
+      const items_second = document.createElement("li");
+      items_second.textContent = "TypeScript";
+
+      list.append(items_first, items_second);
+      document.body.appendChild(list);
+
+      // # user React
+      /*
+        const listReact = React.createElement(
+          "ul",
+          null,
+          React.createElement("li", {id:"js"}, "Javascript"),
+          React.createElement("li", null, "TypeScript")
+        );
+        ReactDOM.render(listReact, document.body);
+      */
+    </script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"
+    ></script>
+  </body>
+</html>
