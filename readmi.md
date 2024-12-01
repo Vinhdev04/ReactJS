@@ -1,5 +1,7 @@
 ### -------------------------------- ReactJS --------------------------------
 
+-> Author: @Vinhdev04
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -126,6 +128,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## So sánh: MPA vs SPA
 
+---
+
 ### Tốc độ:
 
 - SPA nhanh hơn khi sử dụng
@@ -134,20 +138,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - MPA chậm hơn khi sử dụng
   - Luôn tải lại toàn bộ dữ liệu khi truy cập và chuyển hướng
 
+---
+
 ### Bóc tách:
 
 - SPA có phần FE riêng biệt
 - MPA có FE và BE phụ thuộc nhau nhiều hơn, cùng đặt trong 1 Project
+
+---
 
 ### SEO:
 
 - SPA không thân thiện với SEO như MPA
 - Trải nghiệm trên mobile sẻ tốt hơn
 
+---
+
 ### UX:
 
 - SPA cho trải nghiệm tốt hơn, nhất là chuyển trang
 - Trải nghiệm trên mobile sẻ tốt hơn
+
+---
 
 ### QUá trình phát triển:
 
@@ -156,26 +168,36 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
   - Chia team phát triển song song
   - Phát trieentr thêm mobile app dễ dàng
 
+---
+
 ### Phụ thuộc Javascript:
 
 - SPA phụ thuộc vào javascript
 - MPA có thể không cần javascript
+
+---
 
 ### Perfomance:
 
 - SPA sẻ giảm tải dữ liệu cho server vì việc render dữ liệu sẻ được đẩy về phía client
 - MPA nhiều request sẻ tăng cường server gây server gặp nhiều vấn đề
 
+---
+
 ### Cách triển khai:
 
 - SPA - Sigle-Page Application -> CSR -> Client side rendering (devices,browser...)
 - MPA - Multi-Page Application -> SSR -> Server side rendering (server,..)
+
+---
 
 ### Nên chọn MPA or SPA ?
 
 -> Tùy vào mục đích mà ta có sự lựa chọn phù hợp
 -> không có gì là hoàn hảo và tối ưu trong mọi trường hợp
 -> sẻ phải hy sinh nhân tố a để đạt được mục đích b
+
+---
 
 ### Cách ReactJS render HTML ra Browser:
 
@@ -187,11 +209,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - Quá trình: App.js -> index.js -> index.html -> Browser
 
+---
+
 ### Components:
 
 -> là thành phần giúp phân chia các UI thành các phần nhỏ dễ quản lý và tái sử dụng
 -> Ví dụ: header,footer,...
 -> Các bước tạo components:
+
+---
 
 # Bước 1: Tạo trong folder "src" tạo 1 folader mới tên là components
 
@@ -201,6 +227,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # Bước 4: Import vào file muốn sử dụng componets đó
 
+---
+
 ### Props:
 
 -> Là 1 object cho phép được truyền vào trong 1 components
@@ -209,8 +237,77 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 -> Cách truyền một props cũng giống như cách mà bạn thêm một attributes cho 1 elements HTML
 -> Props có thể nhận giá trị là tất cả kiểu dữ liệu: + Nguyên thủy: String, Number,Boolean,Undefined,Null,Symbol + Phức tạp: Function,Object(Object,Array)
 
+---
+
 ### Events:
 
 -> Xử lý các sự kiện trong React giống với Javascript nhưng có 1 số khác biệt về cú pháp
 -> Tuân theo quy tắc camelCase
 -> Ví dụ: onClick,onChange,onSubmit,onFocus,onBlur,...
+
+---
+
+### Sử dụng CSS trong ReactJS
+
+# step 1: Tạo file css cùng cấp với component
+
+# step 2: nhúng css vào component băng cú pháp import "./"
+
+---
+
+### Sử dụng SCSS trong ReactJS
+
+# step 1: cài scss bằng lệnh npm i sass cho project (cài 1 lần duy nhất cho 1 project)
+
+# step 2: tạo file scss cùng cấp component
+
+# step 3: nhúng file scss vào component bằng cú pháp import "./"
+
+---
+
+### Hooks trong ReactJS
+
+-> Hooks nghĩa là gắn , móc
+
+## Có 2 loại component là:
+
+# 1. class component
+
+-> Trước đây class component có đầy đủ tính năng còn function component thiếu khá nhiều tính năng
+-> Nên người ta code theo hướng class component
+
+# 2. function component
+
+-> Hooks được thêm mới ở React 16.8 bổ sung thêm tính năng cho function component để giống như class component
+-> Code theo hướng function component ngắn gọn và dễ hiểu hơn so với class component (vì cùng tính năng tương tự nhau)
+
+## Hooks
+
+-> Mang bản chất là những cái hàm được viết sẵn trong ReactJS được sử dụng để code các tính năng khác nhau
+-> Đế sử dụng được các tính năng này ở trong cac component ta cần gắn hooks vào trong component
+
+---
+
+### Các loại Hooks
+
+## Có 10 loại hooks:
+
+# 1. useState
+
+# 2. useEffect
+
+# 3. useContext
+
+# 4. useRef
+
+# 5. useCallback
+
+# 6. useMemo
+
+# 7. useReducer
+
+# 8. useLayoutEffect
+
+# 9. useImpreativeHandle
+
+# 10. userDebugValue

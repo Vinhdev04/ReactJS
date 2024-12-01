@@ -1,0 +1,29 @@
+.list {
+  background: aquamarine;
+  list-style-type: disclosure-closed;
+  border: 1px solid orange;
+  margin: 40px;
+  padding: 30px;
+  min-width: 300px;
+  display: inline-block;
+}
+
+.list__item {
+  padding: 5px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  border-bottom: 1px solid orange;
+}
+
+.list__item:first-child {
+  color: blue;
+}
+
+.list__item:nth-of-type(2) {
+  color: red;
+}
+
+.list__item:last-child {
+  color: purple;
+}
