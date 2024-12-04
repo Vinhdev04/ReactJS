@@ -294,7 +294,37 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # 1. useState
 
-# 2. useEffect
+-> Giúp cập nhật lại trạng thái cảu dữ liệu hay cập nhật lại giá trị cảu dữ liệu
+-> Khi dữ liệu thay đổi thì giao diện sẽ được cập nhật lại theo dữ liệu mới
+-> Ví dụ:
+
+- dark / mode
+- login /signUp
+- Cart sản phẩm
+
+# 2. TH1: useEffect(callback)
+
+-> sử dụng chính để call "API"
+-> Dùng để xử lý login nào đó khi data được thay đổi
+-> Component sau khi được render ra giao diện lần đầu thì sẻ gọi tới hàm callback cảu useEffect. Vì chúng ưu tiên việc render ra giao diện trước,xử lý giao diện sau nên callback cảu useEffect sẻ chạy ngay sau khi component được render ra
+-> Syntax: useEffect(callback)
+-> Với:
+
+- callback: hàm được gọi lại -> bắt buộc có
+- là 1 biến , không bắt buộc
+
+# TH2: useEffect(callback, []):
+
+-> sử dụng chính để call "API"
+-> Khi render lại giao diện (tức là lần thứ 2 trở đi) thì "callback" của useEffect() sẻ ko được gọi lại
+-> Thường sử dụng cho việc gọi "API" 1 lần để lấy dữ liệu
+-> Chú ý mục đích cần để sử dụng hợp lý
+
+# TH3: useEffect(callback,[dependency])
+
+-> sử dụng chính để call "API"
+-> Khi render lại giao diện (từ lần 2 trở đi) thì callback của useEffect được gọi lại khi "dependency" thay đổi
+-> Ví dụ khi làm phân trang web (pagination)
 
 # 3. useContext
 
