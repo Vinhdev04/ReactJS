@@ -6,9 +6,9 @@ import Products from "./components/Products";
 function App() {
   return (
     <>
-      <UseEffect />,
+      {/* <UseEffect />,
       <UseEffect2 />
-      <UseEffect3 />
+      <UseEffect3 /> */}
       <Products />
     </>
   );
