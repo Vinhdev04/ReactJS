@@ -326,7 +326,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 -> Khi render lại giao diện (từ lần 2 trở đi) thì callback của useEffect được gọi lại khi "dependency" thay đổi
 -> Ví dụ khi làm phân trang web (pagination)
 
-# 3. useContext
+# 3. useContext -> bối cảnh
+
+-> Giúp đơn giản hóa việc chuyển đổi dữ liệu từ "components" cha xuống các "components" con mà không cần truyền qua trung gian "props"
+-> Nói cách khách useContext -> chuyển trức tierep từ cha xuống con
+-> Ví dụ:
+
+- A -> (props) -> B -> (props) -> C -> ..... => trung gian "props"
+- A -> B => trực tiếp
+
+## Các bước sử dụng useContext:
+
+## Step 1: Tạo 1 bối cảnh ở components A (để tạo ra phạm vi và sử dụng dược data trong phạm ví đó,ví dụ phạm vi là component A thì tất cả component con đều sử dụng được)
+
+-> import {createContext} from "react"
+
+-> export const nameContext = createContext()
+
+## Step 2: Cung cấp bói cảnh để bao bọc toàn bộ các component cần sử dụng data
+
+-> <nameContext.Provider value={data}>Component</nameContext.Provider>
+
+## Step 3: Sử dụng useContext ở component con để lấy data từ component cha
+
+-> import {useContext} from "react"
+-> import {nameContext} from "./"
+-> const data = useContext(nameContext)
 
 # 4. useRef
 
