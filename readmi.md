@@ -329,7 +329,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # 3. useContext -> bối cảnh
 
 -> Giúp đơn giản hóa việc chuyển đổi dữ liệu từ "components" cha xuống các "components" con mà không cần truyền qua trung gian "props"
--> Nói cách khách useContext -> chuyển trức tierep từ cha xuống con
+-> Nói cách khách useContext -> chuyển trức tiếp từ cha xuống con
 -> Ví dụ:
 
 - A -> (props) -> B -> (props) -> C -> ..... => trung gian "props"
