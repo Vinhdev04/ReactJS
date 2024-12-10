@@ -355,6 +355,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # 4. useRef
 
+-> Trả về 1 object với thuộc tính "current" được khởi tạo thông qua tham số truyền vào
+-> Object trả về "không bị khởi tạo lại" khi components "render lại"
+->Giá trị trong Objects thay ddoooir nhưng "components không bị render lại" => useState thay đổi thì sẻ làm cho components render lại
+
+## Syntax: const nameValue = useRef(initValue)
+
+-> Với initValue: giá trị khởi tạo
+=> UseRef:
+-> được sử dụng để truy cập được các phần tử trong "DOM"
+-> Nó có thể được sử dụng để lưu trữ giá trị có thể thay đổi mà không gây ra việc hiển thị lại khi cập nhật.
+-> cũng có thể được sử dụng để theo dõi các giá trị trạng thái trước đó.
+-> đếm được số lần components render lại -> tối ưu performance
+
 # 5. useCallback
 
 # 6. useMemo
