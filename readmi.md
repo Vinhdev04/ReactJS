@@ -370,7 +370,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # 5. useCallback
 
-# 6. useMemo
+-> giúp tránh việc thức hiện lại một hàm không cần thiết
+-> giúp tạo ra một vùng nhớ để lưu hàm callback và chỉ tạo ra hàm mới khi "dependency" thay đổi
+-> Nên dùng useCallback khi component "con" có sử dụng "memo"
+
+## Syntax: const fn_name = useCallback(callback,dependency);
+
+## Với:
+
+-> callback là một hàm được gọi lại, lần render đầu tiên luôn chạy vào hàm này
+-> dependency là sự phụ thuộc,khi dependency thay đổi thì useCallback mới tạo ra một hàm mới
+
+# 6. React.memo()
+
+-> HOC
+-> dùng để ghi nhớ kết quả
+-> memo => Memories
+-> Là "Higher Order Components" (thành phần bậc cao hơn) được sử dụng để bọc các "Components"
+-> không render lại components khi components không có gì thay đổi
+-> Khi ko sử dụng React.memo() khi đó các components ko thay đổi
+vẫn bị render lại
+
+## Syntax: import {memo} from "react",...., export default memo (components)
 
 # 7. useReducer
 
