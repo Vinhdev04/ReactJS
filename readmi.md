@@ -381,9 +381,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 -> callback là một hàm được gọi lại, lần render đầu tiên luôn chạy vào hàm này
 -> dependency là sự phụ thuộc,khi dependency thay đổi thì useCallback mới tạo ra một hàm mới
 
-# 6. React.memo()
+# 6. function: React.memo()
 
--> HOC
+-> Higher Order Components HOC
 -> dùng để ghi nhớ kết quả
 -> memo => Memories
 -> Là "Higher Order Components" (thành phần bậc cao hơn) được sử dụng để bọc các "Components"
@@ -393,10 +393,73 @@ vẫn bị render lại
 
 ## Syntax: import {memo} from "react",...., export default memo (components)
 
-# 7. useReducer
+# 7. useMemo()
 
-# 8. useLayoutEffect
+-> giúp tránh việc thực hiện lại 1 "logic" không cần thiết
+-> useMemo() tạo ra 1 vùng nhớ lưu cac giá trị đầu ra và chỉ định nhớ giá trị mới khi "dependency" thay đổi
 
-# 9. useImpreativeHandle
+## Syntax: const variable_name = useMemo(callback,dependency);
 
-# 10. userDebugValue
+## Với:
+
+    -> callback: là 1 hàm được gọi lại, lần render đầu tiên luôn chạy vào hàm này
+    -> dependency: là sự phụ thuộc khi dependency thay đổi thì useMemo cập nhật lại giá trị
+
+## ---------------------- So sánh useCallback với useMemo ----------------------
+
+-> useCallback lưu vào bộ nhớ 1 function
+-> useMemo lưu vào bộ nhớ 1 giá trị
+
+# 8. useReducer
+
+# 9. Hướng dẫn Skeleton
+
+# 10. useLayoutEffect
+
+# 11. useImpreativeHandle
+
+# 12. userDebugValue
+
+# 13. useTransition() -> new 2024,react 19
+
+# 14. useDefferedValue() -> new 2024,react 19
+
+## ---------------------- Kiến thức mở rộng React ----------------------
+
+1. Batch Updates:
+   -> Là cơ chế mà React Tối ưu hóa việc cập nhật lại trạng thái (state) và giao diện (UI) bằng cách nhóm nhiều thay đổi lại với nhau
+   và thực hiện chúng trong một lần cập nhật duy nhất
+   -> Giusp giảm số lần render lại không cần thiết và tăng hiệu suất
+
+# Cách hoạt động:
+
+-> Khi nhiều thay đổi trạng thái (state updates) được gọi trong cùng một sự kiện hoặc luồng xử lý,
+React sẽ nhóm chúng lại (batch) thay vì thực hiện từng thay đổi riêng lẻ.
+-> React sẽ tính toán sự khác biệt (diff) trong DOM và chỉ cập nhật các phần cần thiết sau khi tất cả các thay đổi đã hoàn tất.
+-> Batch Updates không được kích hoạt khi các thay đổi trạng thái diễn ra ngoài React event handlers (như setTimeout hoặc promise) => Cách khắc phục: Sử dụng API ReactDOM.flushSync
+-> Batch Updates trong React có thể không xảy ra khi các cập nhật trạng thái (state updates) diễn ra trong bối cảnh bất đồng bộ (asynchronous context), chẳng hạn như trong:
+-> setTimeout hoặc setInterval
+-> Promise hoặc async/await
+-> API callback không thuộc React (vd: WebSocket, fetch)
+
+# Cơ chế Batch Updates trong React 18+
+
+-> Kể từ React 18, batch updates được mở rộng cho cả:
+-> Các cập nhật trạng thái ngoài sự kiện đồng bộ.
+-> Asynchronous updates (Promise, async/await).
+
+# Khi nào cần flushSync?
+
+-> Nếu bạn muốn áp dụng cập nhật ngay lập tức mà không đợi batch updates:
+-> Sử dụng flushSync khi bạn cần phản hồi UI ngay lập tức, nhưng cần cẩn thận vì nó có thể ảnh hưởng đến hiệu suất.
+
+# Lý do Batch Updates không xảy ra trong bối cảnh bất đồng bộ
+
+-> React sử dụng cơ chế batching để gom nhóm các thay đổi xảy ra trong một React event loop (như onClick, onChange).
+-> Tuy nhiên, khi các thay đổi trạng thái xảy ra ngoài sự kiện này (bất đồng bộ), React không thể tự động nhóm các thay đổi lại,
+dẫn đến việc mỗi lần gọi setState sẽ gây ra một lần render riêng biệt.
+
+# Example:
+
+![alt text](image.png)
+-> khắc phục: ![alt text](image-1.png),![alt text](image-2.png),![alt text](image-3.png)
