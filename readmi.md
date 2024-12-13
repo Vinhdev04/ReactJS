@@ -463,3 +463,14 @@ dẫn đến việc mỗi lần gọi setState sẽ gây ra một lần render r
 
 ![alt text](image.png)
 -> khắc phục: ![alt text](image-1.png),![alt text](image-2.png),![alt text](image-3.png)
+
+---
+
+2. Vòng đời của components trong React (mount,update,unmount)
+   => Trong React có 3 giai đoạn chính trong vòng đời của nó:
+
+# Mount: Component được tạo ra và đưa vào DOM (lần đầu tiên khi render)
+
+# Update: Component cập nhật khi "state" hoặc "props" thay đổi
+
+# Unmount: Component bị xóa khỏi DOM (khi component bị hủy bỏ hoặc bị loại bỏ)

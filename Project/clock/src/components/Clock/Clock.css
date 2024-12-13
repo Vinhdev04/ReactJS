@@ -1,0 +1,79 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  border: 1px solid #ddd;
+  padding: 20px 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  background: darkslategrey;
+  overflow: hidden;
+  width: 350px;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.clock__timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  padding: 10px 20px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s all linear;
+  /* Viền gradient chuyển động */
+  border: 4px solid transparent;
+  background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000);
+  background-size: 200% 200%;
+  animation: border-animate 3s ease-in-out infinite;
+}
+
+/* Để tránh nội dung bị ảnh hưởng bởi hiệu ứng viền */
+.clock__timer::before {
+  content: "";
+  background: darkslategrey;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+/* Animation cho viền */
+@keyframes border-animate {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.clock__timer:hover {
+  transform: scale(1.1);
+}
+
+.clock__date {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
