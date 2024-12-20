@@ -353,7 +353,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 -> import {nameContext} from "./"
 -> const data = useContext(nameContext)
 
-# 4. useRef
+# 4. useRef()
 
 -> Trả về 1 object với thuộc tính "current" được khởi tạo thông qua tham số truyền vào
 -> Object trả về "không bị khởi tạo lại" khi components "render lại"

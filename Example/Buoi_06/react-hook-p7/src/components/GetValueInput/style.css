@@ -1,0 +1,21 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  height: 100vh;
+}
+
+input {
+  width: 220px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: 0;
+  padding-left: 10px;
+  transition: 0.3s all linear;
+}
+
+input:hover {
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.6);
+}

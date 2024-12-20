@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./style.css";
 
 //  TODO: Sử dụng useRef() -> random presents
@@ -25,12 +24,14 @@ function RandomPresent(props) {
 
   return (
     <>
-      <button onClick={handleRandom} className="btn">
-        Random
-      </button>
-      <div>
-        Goodluck! Get Presents:
-        <span style={{ color: "red", fontWeight: "bold" }}> {result}</span>
+      <div className="center">
+        <button onClick={handleRandom} className="btn">
+          Random
+        </button>
+        <div>
+          Goodluck! Get Presents:
+          <span style={{ color: "red", fontWeight: "bold" }}> {result}</span>
+        </div>
       </div>
     </>
   );

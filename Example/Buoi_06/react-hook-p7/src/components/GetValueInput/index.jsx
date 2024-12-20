@@ -1,6 +1,5 @@
-import React from "react";
-import { useState, useRef, useEffect } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
+import "./style.css";
 // TODO lấy dữ liệu input khi dữ liệu thay đổi
 function GetValueInput(props) {
   const [initValue, setInitValue] = useState("");
@@ -22,7 +21,9 @@ function GetValueInput(props) {
   }, []);
 
   return (
-    <input type="text" value={initValue} onChange={handleValue} ref={input} />
+    <div className="center">
+      <input type="text" value={initValue} onChange={handleValue} ref={input} />
+    </div>
   );
 }
 

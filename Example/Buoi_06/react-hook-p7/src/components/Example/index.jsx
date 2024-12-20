@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useRef } from "react";
+import React, { useRef, useState } from "react";
 
 // TODO: SỬ DỤNG ĐỂ ĐẾM SỐ LẦN RENDER LẠI
 function Example(props) {
@@ -24,6 +23,7 @@ function Example(props) {
 
   return (
     <>
+      {""}
       <input
         type="text"
         placeholder="Enter text..."
