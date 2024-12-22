@@ -1,0 +1,34 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  min-height: 100vh;
+  background-color: bisque;
+}
+
+.gift {
+  font-weight: bold;
+  color: red;
+}
+
+button {
+  padding: 10px 30px;
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  background-color: rgb(44, 44, 206);
+  font-weight: bold;
+  color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(34, 34, 166);
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
