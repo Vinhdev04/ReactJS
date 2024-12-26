@@ -412,6 +412,18 @@ vẫn bị render lại
 
 # 8. useReducer
 
+-> "useReducer" giống như bản nâng cấp của "useState"
+-> Thường được sử dụng trong trường hợp components có "state" phức tạp
+
+## Syntax: const[state,dispatch] = useReducer(reducer,initialState)
+
+## Với:
+
+    -> Bước 1: Khởi tạo useReducer và xác định giá trị khởi tạo
+    -> Bước 2: Xây dựng hàm reducer (là hàm chuyển đổi ,đầu vào là 2 tham số gồm "state" và "action",đầu ra là "new-state" )
+    -> Bước 3: Xác định những Action (những hành động xảy ra)
+    -> Sử dụng depatch để kích hoạt một action
+
 # 9. Hướng dẫn Skeleton
 
 # 10. useLayoutEffect

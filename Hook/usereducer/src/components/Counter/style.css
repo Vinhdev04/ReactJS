@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column-reverse;
+  min-height: 100vh;
+  gap: 10px;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.control button {
+  padding: 10px 30px;
+  color: white;
+  border: none;
+  outline: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.control button:hover {
+  opacity: 0.5;
+}
+
+.control button:first-child {
+  background-color: #4caf50;
+}
+
+.control button:nth-child(2) {
+  background-color: #ff9800;
+}
+
+.control button:last-child {
+  background-color: #f44336;
+}
+
+.container div:first-child {
+  margin-top: 30px;
+  color: #000;
+  font-weight: bold;
+  border: 1px solid #aeaeae;
+  padding: 10px;
+  border-radius: 8px;
+}
