@@ -1,0 +1,59 @@
+input {
+  width: 94%;
+  padding: 5px;
+  border: 1px dashed #2929c5;
+  border-radius: 6px;
+  outline: 0;
+  padding-left: 10px;
+  height: 20px;
+}
+
+select {
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px dashed #2929c5;
+  border-radius: 6px;
+  outline: 0;
+  padding-left: 10px;
+  height: 32px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+textarea {
+  margin-top: 10px;
+  width: 94%;
+  padding: 5px;
+  border: 1px dashed #2929c5;
+  border-radius: 6px;
+  outline: 0;
+  resize: none;
+  padding-left: 10px;
+  height: 20px;
+}
+
+.control-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btn-add {
+  background: #2929c5;
+}
+
+.btn-cancel {
+  background: #ccc;
+}
+
+input[type="submit"] {
+  color: #fff;
+  height: 35px;
+  width: 120px;
+}

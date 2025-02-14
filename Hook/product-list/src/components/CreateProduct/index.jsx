@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import swal from "sweetalert";
+import { createProduct } from "../../Services/createProduct";
 function CreateProduct(props) {
   const [isModal, setIsModal] = useState(false);
   const [data, setData] = useState({});
@@ -26,29 +27,17 @@ function CreateProduct(props) {
     setIsModal(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(data);
-    // TODO: call API POST product
-    fetch("http://localhost:3000/products", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data) {
-          setIsModal(false);
-          onReload(); // render when POST product
+    // TODO: call API POST product from Services
+    const result = await createProduct(data);
+    if (result) {
+      setIsModal(false);
+      onReload(); // render when POST product
 
-          // import SweetAlert
-          swal("Thành công!", "Bạn đã thêm sản phẩm thành công!", "success");
-        }
-      })
-      .catch((err) => console.log(err));
+      // import SweetAlert
+      swal("Thành công!", "Bạn đã thêm sản phẩm thành công!", "success");
+    }
   };
 
   const handleOnChange = (e) => {
@@ -66,8 +55,10 @@ function CreateProduct(props) {
   return (
     <div>
       <button onClick={openModal} className="btn btn-create">
-        Tạo sản phẩm
+        + Tạo sản phẩm
       </button>
+
+      {/*import Modal  */}
       <Modal isOpen={isModal} onRequestClose={closeModal} style={customStyles}>
         <form action="#" onSubmit={handleSubmit}>
           <div className="form-control">

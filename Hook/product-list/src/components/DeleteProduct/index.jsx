@@ -2,6 +2,7 @@ import React from "react";
 import swal from "sweetalert";
 function DeleteProduct(props) {
   const { item, onReload } = props;
+
   const handleDelete = () => {
     console.log(item.id); // check id product
     swal({

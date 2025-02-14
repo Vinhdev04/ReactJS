@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { getProduct } from "../../API/product";
 import DeleteProduct from "../DeleteProduct";
 import EditProduct from "../EditProduct";
 import "./style.css";
 function Product(props) {
-  const [data, setData] = useState([]);
   const { reload } = props;
+  const [data, setData] = useState([]);
   const [update, setUpdate] = useState(false);
 
   const handleReload = () => {
@@ -13,18 +14,12 @@ function Product(props) {
 
   useEffect(() => {
     const fetchAPI = async () => {
-      fetch("http://localhost:3000/products")
-        .then((respon) => respon.json())
-        .then((data) => {
-          console.log(data);
-          setData(data.reverse());
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      // import from API
+      const result = await getProduct();
+      setData(result.reverse());
     };
     fetchAPI();
-  }, [reload, update]); // reload != reload -> rerender API data
+  }, [reload, update]); // reload != reload  || update != update-> rerender API data
   // console.log(data);
 
   return (
