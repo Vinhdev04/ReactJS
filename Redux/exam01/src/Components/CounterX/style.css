@@ -1,0 +1,7 @@
+.containerX {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -300px 0 0 0;
+  flex-direction: column;
+}
