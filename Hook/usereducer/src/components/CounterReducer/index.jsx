@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import "./style.css";
 const getCounter = (state, action) => {
-  // action: Increase,Decrease,Reset
+  // action: Increase, Decrease, Reset
   console.log(state, action);
   switch (action) {
     case "Increase":
@@ -15,7 +15,8 @@ const getCounter = (state, action) => {
   }
 };
 function CounterReducer(props) {
-  // TODO:  counter with useReducer():
+  // TODO:  counter with useReducer(function,initialValue):
+  // const [counter, dispatch] = useReducer(reducer, 0); Tương tự nhau, tên biến "dispatch" tùy ý
   const [counter, setCounter] = useReducer(getCounter, 0);
   return (
     <div className="container">

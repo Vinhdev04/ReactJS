@@ -486,3 +486,56 @@ dẫn đến việc mỗi lần gọi setState sẽ gây ra một lần render r
 # Update: Component cập nhật khi "state" hoặc "props" thay đổi
 
 # Unmount: Component bị xóa khỏi DOM (khi component bị hủy bỏ hoặc bị loại bỏ)
+
+### -------------------------------- Redux --------------------------------
+
+# 01. Vấn đề và giải pháp khi chia sẻ "data" giữa các "component" ?
+
+![Vấn đề khi chia sẻ dữ liệu "data" giwuax các "component"](Docs/Sources/Images/problem.jpg)
+-> Khi sử dụng REACT để truyền được "data" giữa các "component" ta phải truyền lên "App" sau đó mới truyền sang các "component" khác.
+-> Khi có nhiều " component" thì sẻ làm cấu trúc của "App" bị rối
+
+# 02. Lý do ra đời của Redux
+
+![Mô tả Redux](Docs/Sources/Images/redux-store.png)
+-> Do yêu cầu cho các ứng dụng single-page sử dụng Javascript ngày càng trở lên phức tạp thì code của chúng ta phải quản lý nhiều state hơn.
+-> "State" có thể bao gồm là "data" trả về từ phía "Server" và được "cached" lại hay nhữ dữ liệu được tạo ra từ phía "Client" mà chưa được đẩy lên "Server"
+
+# 03. Khái niệm về Redux
+
+![Mô tả Redux](Docs/Sources/Images/redux-store.png)
+-> Với "Redux", các "state" và "data" thường được lưu trữ trong "Store" và mỗi "components" đều có thể "access" bất kỳ "state" nào mà chúng muốn từ "store"
+
+-> "Redux" là 1 thư viện được viết bằng Javascript
+-> "Redux" dùng để quản lý "state" của toàn bộ ứng dụng <=> Tương tự việc khai báo 1 biến "global" để sử dụng ở nhiều nơi
+
+# 04. Cách thức hoạt động của Redux
+
+-> Tương tự useReducer
+![Nguyên lý vận hành của Redux](Docs/Sources/Images/redux-workflows.gif)
+![Các thức hoạt động của Redux](Docs/Sources/Images/redux-tree-1.png)
+
+-> "Store" là một kho lưu trữ các "state" và phân phát các "state" cho các "component"
+-> "Action" là những hành động có thể xảy ra
+-> "Dispatch" ldufng để kích hoạt một "action" và gửi "action" đó đến "Reducer"
+-> "Reducer" dùng để tiếp nhận "action"do "Dispatch" gửi đến, sau đó xử lý "logic" để cho ra kết quả và lưu vào "store"
+
+=> Cách hoạt động:
+Sau khi một "action" được thực thi "dispathcer" sẻ được kích hoạt và gửi đến "reducer" một "action"
+"Reducer" thực hiện hành động dựa vào "action" gửi đến
+Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả về "state" mới đó
+
+# 05. Các bước sử dụng Redux
+
+-> Bước 01: "npm install redux react-redux"
+-> Bước 02: Tạo cấu trúc folder(thêm folder actions,reducers)
+-> Bước 03: Thêm những "action" vào File actions/"tên_file.js"
+-> Bước 04: Thêm "reducer" vào File reducers/"tên_file.js"
+-> Bước 05: Tạo file "reducers/index.js" -> dùng để gộp tất cả các "reducer" lại và cho vào cùng một "store"
+-> Bước 06: Sau đó sử dụng function"combineReducer" của "Redux" để hợp nhất tất cả "reducer" thành 1 là "allReducers"
+-> Bước 07: Ở file "index.js" (file ở cấp cao nhất) -> Sử dụng function "createStore" để tạo "store" chứa "allReducers"
+-> Bước 08: Tiếp theo ta gói <App/> bên trong 1 "component" hộ trợ của "react-redux" là "Provider" nhờ đó tất cả "component" trong <App/> đều truy cập được store
+-> Bước 09:
+
+- Sử dụng "useSelector" của "react-redux" để lấy các "state" từ "store"
+- Sử dụng "useDispatch" để trả về function dispatch, truyền các "action" vào "dispatch" để cập nhật lại "state"
