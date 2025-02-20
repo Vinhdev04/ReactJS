@@ -1,0 +1,54 @@
+.layout {
+  &__header {
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-weight: bold;
+  }
+
+  &__body {
+    padding: 30px;
+  }
+
+  &__footer {
+    background-color: rgb(233, 183, 90);
+    padding: 20px;
+    text-align: center;
+  }
+
+  &__menu {
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+
+      li {
+        margin-left: 10px;
+        font-size: 20px;
+
+        a {
+          text-decoration: none;
+          color: #000;
+          font-weight: 400;
+          transition: 0.3s ease;
+
+          &.active {
+            color: red;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    color: #000;
+    text-decoration: none;
+    &--active {
+      color: #fff;
+    }
+  }
+}

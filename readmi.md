@@ -539,3 +539,84 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 
 - Sử dụng "useSelector" của "react-redux" để lấy các "state" từ "store"
 - Sử dụng "useDispatch" để trả về function dispatch, truyền các "action" vào "dispatch" để cập nhật lại "state"
+
+### -------------------------------- React-Router --------------------------------
+
+# 01. Khái niệm về "react-router" trong ReactJS
+
+![Ví dụ](./Docs/Sources/Images/react-route.jpg)
+-> Trong một ứng dụng web sẻ có nhiều trang khac nhau, để có thể quản lý và điều hướng giữa các trang với nhau chúng ta cần sử dụng "Router"
+-> Router giúp chia ứng dụng thành các trang mỗi trang tương ứng 1 phần cụ thể
+-> Khi người dùng thực hiện các hành động như nhấn vào liên kết,... => Router sẻ chuyển đổi điều hướng giữa các trang mà không cần "reload" lại website
+-> React Router là 1 thư viện được viết bằng React để quản lý routing trong các ứng dụng web
+
+# 02. Các thành phần chính của Router trong ReactJS
+
+## BrowserRouter:
+
+![Ví dụ](./Docs/Sources/Images/react-router-browerRouter.png)
+-> Là 1 thành phần sử dụng để bọc toàn bộ ứng dụng ReactJS
+-> import và bọc lại component <App/>
+-> Nó sử dụng HTML5 history API để giữ cho URL được đồng bộ với trạng thái ứng dụng
+
+## Route:
+
+![Ví dụ](./Docs/Sources/Images/react-route-route.png)
+-> Được sử dụng để định nghĩa một "route" để điều hướng đến một c"component" cụ thể
+-> Lưu ý: Đường dẫn trên thanh" url" phải trùng với địa chỉ được định nghĩa ở trong Route
+-> Với :
+
+- path = "/" -> đường dẫn router
+- path ="\*" -> còn lại
+- element ="" -> components muốn hiển thị
+  ![Ví dụ](./Docs/Sources/Images/image-4.png)
+
+## Routes:
+
+-> Cung cấp các tuyến đường "routes" dùng để điều hướng các thành phần của ứng dụng React
+-> Dùng để bọc bên ngoài danh sách các Route
+-> Tương tụ cấu trúc <ul><li></li></ul> để bọc các route
+
+## Link:
+
+![Ví dụ](./Docs/Sources/Images/react-route-link.png)
+-> Cho phép chuyển dổi giữa các URL khác nhau mà không cần "reload" lại website
+-> Tương tự thẻ <a>
+-> Trang web chỉ render lại những phần cần thiết.
+
+## Outlet:
+
+![Ví dụ](image-4.png)
+-> Sử dụng để xác định vị trí mà component trong route được hiển thị
+-> Gioosng với {props.children} trong React
+
+## NavLink:
+
+![Ví dụ](image-5.png)
+-> Tương tự thẻ Link trong Route nhưng nếu URL trùng với link của NavLink thì nó sẻ thêm class"active"
+
+## Redirec:
+
+![alt text](image-6.png)
+-> Redirect là một thành phần được sử dụng để chuyển hướng người dùng từ một đường dẫn khác.
+-> Nếu người dùng truy cập đường dẫn được xác định trong Redirect, họ sẽ được chuyển hướng đến địa chỉ mới.
+
+## Navigate:
+
+-> Sử dụng Navigate để tự động chuyển hướng đến một trang nào đó
+
+# 03. Cách sử dụng "components" của React-Router
+
+# 04. Nested Routes
+
+-> Tạo ra các route lồng nhau
+
+# 05. Index routes
+
+# 06. Dynamic routes
+
+# 07. Hooks của React-Router
+
+# 08. Protected routes
+
+# 09. Route Objects
