@@ -52,3 +52,36 @@
     }
   }
 }
+
+.menu {
+  ul {
+    display: flex;
+    // padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      position: relative;
+      margin-left: 20px;
+    }
+  }
+
+  &__sub {
+    position: absolute;
+    background: red;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-left: 0;
+    display: none !important;
+    transition: 0.3s ease;
+
+    a {
+      white-space: nowrap;
+    }
+  }
+
+  li:hover > &__sub {
+    display: flex !important;
+  }
+}

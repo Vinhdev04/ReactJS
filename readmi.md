@@ -597,7 +597,7 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 
 ## Redirec:
 
-![alt text](image-6.png)
+![Redirec](image-6.png)
 -> Redirect là một thành phần được sử dụng để chuyển hướng người dùng từ một đường dẫn khác.
 -> Nếu người dùng truy cập đường dẫn được xác định trong Redirect, họ sẽ được chuyển hướng đến địa chỉ mới.
 
@@ -609,14 +609,44 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 
 # 04. Nested Routes
 
+![Nested Routes](image-7.png)
 -> Tạo ra các route lồng nhau
+VD: https://domain.com/blog/new
+VD: https://domain.com/blog/lasted
 
 # 05. Index routes
 
+-> Dùng để hiển thị components ở "route con" ra ngoài "route cha"
+-> Chúng ta mong muốn là URL vẫn hiển thị một component nào đó ở ngay component cha
+-> Để làm được điều đó ta sử dụng "index" và truyền component con muốn được hiển thị
+-> Nó xác định route mặc định khi người dùng truy cập vào đường dẫn cha.
+-> Nên dùng khi có layout chung (<Outlet />).
+-> Nên dùng khi cần một trang mặc định trong route cha.
+
 # 06. Dynamic routes
+
+-> Giúp chúng ta tạo ra các "route" động
 
 # 07. Hooks của React-Router
 
+## useParams:
+
+-> Dùng để lấy được tham số trên useParams
+
+## useNavigate:
+
+-> Dùng ddeer điều hướng đến một đường dẫn khác,hoặc trở về các trang trước đó đã truy cập
+
 # 08. Protected routes
 
+-> Giả sử ứng dụng chúng ta có 2 phần: "public" và "private"
+
+- Phần "public" ai cũng có thể truy cập: Home,blog,....
+- Phần "private" thì phải đăng nhập,.. mới xem Được
+  -> Về hành vi đối với người dùng:
+- Nếu đăng nhập rồi -> xem được tất cả link của "public" và "private"....
+- Nếu chưa thì chỉ truy cập được các trang thuộc "public",nếu vẫn cố truy cập các trang "private" thì chuyển hướng họ tới trang login
+
 # 09. Route Objects
+
+-> Hook[useRoutes] dùng để xác định các tuyến route dưới dạng Object thuần javascript thay cho <Routes> và <Route>

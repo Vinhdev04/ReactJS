@@ -2,6 +2,9 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Default from "./layout/Default";
 import About from "./pages/About";
+import Blog from "./pages/Blog";
+import BlogLeasted from "./pages/Blog/BlogLeasted";
+import BlogNew from "./pages/Blog/BlogNew";
 import Contact from "./pages/Contact";
 import Error404 from "./pages/Error404";
 import Home from "./pages/Home";
@@ -16,6 +19,10 @@ function App() {
           <Route path="about" element={<About />}></Route>
           <Route path="project" element={<Project />}></Route>
           <Route path="contact" element={<Contact />}></Route>
+          <Route path="blog" element={<Blog />}>
+            <Route path="news" element={BlogNew}></Route>
+            <Route path="leasted" element={BlogLeasted}></Route>
+          </Route>
           <Route path="*" element={<Error404 />}></Route>
         </Route>
       </Routes>

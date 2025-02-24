@@ -35,6 +35,23 @@ function Default(props) {
                 Contact
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/blog" className={activeLink}>
+                Blog
+              </NavLink>
+              <ul className="menu__sub">
+                <li>
+                  <NavLink to="/blog/news" className={activeLink}>
+                    Blog News
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/blog/leasted" className={activeLink}>
+                    Blog Leasted
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
             {/* <li>
               <Redirect from="/about" to="/contact">
                 Contact
