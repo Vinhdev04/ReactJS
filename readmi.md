@@ -616,6 +616,7 @@ VD: https://domain.com/blog/lasted
 
 # 05. Index routes
 
+![Index routes](image-8.png), ![Index routes](image-9.png)
 -> Dùng để hiển thị components ở "route con" ra ngoài "route cha"
 -> Chúng ta mong muốn là URL vẫn hiển thị một component nào đó ở ngay component cha
 -> Để làm được điều đó ta sử dụng "index" và truyền component con muốn được hiển thị
