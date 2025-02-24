@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import BackToPage from "../../components/BackToPage";
 function BlogDetails(props) {
   //TODO khai báo hook[useParams] -> lấy ra các tham số
   const params = useParams();
@@ -17,6 +18,7 @@ function BlogDetails(props) {
 
   return (
     <div>
+      <BackToPage />
       <h1>Blog Details</h1>
       {post && (
         <>

@@ -638,7 +638,10 @@ VD: https://domain.com/blog/lasted
 
 ## useNavigate:
 
+![useNavigate](image-14.png),![useNavigate](image-15.png)
 -> Dùng ddeer điều hướng đến một đường dẫn khác,hoặc trở về các trang trước đó đã truy cập
+-> useNavigate: với giá trị âm sẻ đi lùi về trước, còn giá trị dương sẻ đi tiến về sau
+-> Tương tự button back và next trên browser
 
 # 08. Protected routes
 
