@@ -52,6 +52,11 @@ function Default(props) {
                 </li>
               </ul>
             </li>
+            <li>
+              <NavLink to="/info-user" className={activeLink}>
+                Info
+              </NavLink>
+            </li>
             {/* <li>
               <Redirect from="/about" to="/contact">
                 Contact

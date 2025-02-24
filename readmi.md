@@ -645,6 +645,7 @@ VD: https://domain.com/blog/lasted
 
 # 08. Protected routes
 
+![Protected routes](image-16.png),![Protected routes](image-17.png)
 -> Giả sử ứng dụng chúng ta có 2 phần: "public" và "private"
 
 - Phần "public" ai cũng có thể truy cập: Home,blog,....
