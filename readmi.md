@@ -656,4 +656,9 @@ VD: https://domain.com/blog/lasted
 
 # 09. Route Objects
 
+![Route Objects](image-20.png),![Route Objects](image-21.png),![Route Objects](image-22.png)
+![Route Objects](image-18.png) => ❌
+![Route Objects](image-19.png)=> ✅
 -> Hook[useRoutes] dùng để xác định các tuyến route dưới dạng Object thuần javascript thay cho <Routes> và <Route>
+-> Tạo thành một mảng chứa các Obj với các key: path,element,children(con của element)
+-> Sau đó import hook[useRoutes] -> lưu mảng chứa các routes và converts mảng đó
