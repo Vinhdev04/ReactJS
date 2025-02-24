@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 function BlogAll(props) {
   const [posts, setPost] = useState([]);
   useEffect(() => {
@@ -8,7 +9,7 @@ function BlogAll(props) {
         setPost(data.posts);
         // console.log(post.posts);
       });
-  });
+  }, []);
   console.log(posts);
 
   return (
@@ -17,7 +18,7 @@ function BlogAll(props) {
       <ul>
         {posts.map((item) => (
           <li key={item.id}>
-            <h3>{item.title}</h3>
+            <Link to={"/blog/" + item.id}>{item.title}</Link>
           </li>
         ))}
       </ul>

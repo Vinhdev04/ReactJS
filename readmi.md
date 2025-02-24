@@ -544,7 +544,7 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 
 # 01. Khái niệm về "react-router" trong ReactJS
 
-![Ví dụ](./Docs/Sources/Images/react-route.jpg)
+![react-router](./Docs/Sources/Images/react-route.jpg)
 -> Trong một ứng dụng web sẻ có nhiều trang khac nhau, để có thể quản lý và điều hướng giữa các trang với nhau chúng ta cần sử dụng "Router"
 -> Router giúp chia ứng dụng thành các trang mỗi trang tương ứng 1 phần cụ thể
 -> Khi người dùng thực hiện các hành động như nhấn vào liên kết,... => Router sẻ chuyển đổi điều hướng giữa các trang mà không cần "reload" lại website
@@ -561,7 +561,7 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 
 ## Route:
 
-![Ví dụ](./Docs/Sources/Images/react-route-route.png)
+![ Route](./Docs/Sources/Images/react-route-route.png)
 -> Được sử dụng để định nghĩa một "route" để điều hướng đến một c"component" cụ thể
 -> Lưu ý: Đường dẫn trên thanh" url" phải trùng với địa chỉ được định nghĩa ở trong Route
 -> Với :
@@ -569,7 +569,7 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 - path = "/" -> đường dẫn router
 - path ="\*" -> còn lại
 - element ="" -> components muốn hiển thị
-  ![Ví dụ](./Docs/Sources/Images/image-4.png)
+  ![ Route](./Docs/Sources/Images/image-4.png)
 
 ## Routes:
 
@@ -579,14 +579,14 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 
 ## Link:
 
-![Ví dụ](./Docs/Sources/Images/react-route-link.png)
+![Link](./Docs/Sources/Images/react-route-link.png)
 -> Cho phép chuyển dổi giữa các URL khác nhau mà không cần "reload" lại website
 -> Tương tự thẻ <a>
 -> Trang web chỉ render lại những phần cần thiết.
 
 ## Outlet:
 
-![Ví dụ](image-4.png)
+![Outlet](image-4.png)
 -> Sử dụng để xác định vị trí mà component trong route được hiển thị
 -> Gioosng với {props.children} trong React
 
@@ -626,12 +626,14 @@ VD: https://domain.com/blog/lasted
 
 # 06. Dynamic routes
 
+![Dynamic routes](image-10.png),![Dynamic routes](image-11.png)
 -> Giúp chúng ta tạo ra các "route" động
 
 # 07. Hooks của React-Router
 
 ## useParams:
 
+![useParams](image-12.png),![useParams](image-13.png)
 -> Dùng để lấy được tham số trên useParams
 
 ## useNavigate:
