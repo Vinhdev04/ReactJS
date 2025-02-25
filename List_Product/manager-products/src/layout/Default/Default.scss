@@ -1,0 +1,122 @@
+.layout {
+  &__header {
+    background-color: yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo a svg {
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+  &__cart {
+    position: relative;
+    cursor: pointer;
+
+    &a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  &__cart svg {
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+  &__cart span {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    color: #fff;
+    top: 15%;
+    right: -34%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__body {
+    padding: 30px 20px;
+  }
+
+  &__copyRight {
+    background: orange;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+  }
+}
+
+.product {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    border: 1px solid #ccc;
+    transition: 0.3s ease-in;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  &__item:hover {
+    border-color: blue;
+  }
+
+  &__detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__detail p {
+    margin-bottom: 0;
+  }
+
+  &__detail p:last-child {
+    margin-bottom: 10px;
+  }
+
+  &__price--old {
+    text-decoration: line-through;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.btn {
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: green;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: darkgreen;
+}
