@@ -1,11 +1,22 @@
 import React from "react";
-import { addToCart } from "../../actions/cart";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, updateQuantity } from "../../actions/cart";
 function ProductItem(props) {
+  //TODO: get item from props
   const { item } = props;
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cartReducer);
+
   const handleAddToCart = () => {
-    // addToCart();
+    //TODO: Nếu sản phẩm đã có -> cập nhật số lượng
+    if (cart.some((cartItem) => cartItem.id === item.id)) {
+      dispatch(updateQuantity(item.id));
+    } else {
+      dispatch(addToCart(item.id, item));
+    }
+    // console.log(cart);
   };
+
   return (
     <>
       <div className="product__item">
