@@ -267,7 +267,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### Hooks trong ReactJS
 
--> Hooks nghĩa là gắn , móc
+## -> Hooks nghĩa là gắn , móc
 
 ## Có 2 loại component là:
 
@@ -276,10 +276,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 -> Trước đây class component có đầy đủ tính năng còn function component thiếu khá nhiều tính năng
 -> Nên người ta code theo hướng class component
 
+---
+
 # 2. function component
 
 -> Hooks được thêm mới ở React 16.8 bổ sung thêm tính năng cho function component để giống như class component
 -> Code theo hướng function component ngắn gọn và dễ hiểu hơn so với class component (vì cùng tính năng tương tự nhau)
+
+---
 
 ## Hooks
 
@@ -292,6 +296,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Có 10 loại hooks:
 
+---
+
 # 1. useState
 
 -> Giúp cập nhật lại trạng thái cảu dữ liệu hay cập nhật lại giá trị cảu dữ liệu
@@ -301,6 +307,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - dark / mode
 - login /signUp
 - Cart sản phẩm
+
+---
 
 # 2. TH1: useEffect(callback)
 
@@ -326,6 +334,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 -> Khi render lại giao diện (từ lần 2 trở đi) thì callback của useEffect được gọi lại khi "dependency" thay đổi
 -> Ví dụ khi làm phân trang web (pagination)
 
+---
+
 # 3. useContext -> bối cảnh
 
 -> Giúp đơn giản hóa việc chuyển đổi dữ liệu từ "components" cha xuống các "components" con mà không cần truyền qua trung gian "props"
@@ -334,6 +344,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - A -> (props) -> B -> (props) -> C -> ..... => trung gian "props"
 - A -> B => trực tiếp
+
+---
 
 ## Các bước sử dụng useContext:
 
@@ -353,6 +365,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 -> import {nameContext} from "./"
 -> const data = useContext(nameContext)
 
+---
+
 # 4. useRef()
 
 -> Trả về 1 object với thuộc tính "current" được khởi tạo thông qua tham số truyền vào
@@ -368,6 +382,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 -> cũng có thể được sử dụng để theo dõi các giá trị trạng thái trước đó.
 -> đếm được số lần components render lại -> tối ưu performance
 
+---
+
 # 5. useCallback
 
 -> giúp tránh việc thức hiện lại một hàm không cần thiết
@@ -381,6 +397,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 -> callback là một hàm được gọi lại, lần render đầu tiên luôn chạy vào hàm này
 -> dependency là sự phụ thuộc,khi dependency thay đổi thì useCallback mới tạo ra một hàm mới
 
+---
+
 # 6. function: React.memo()
 
 -> Higher Order Components HOC
@@ -392,6 +410,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 vẫn bị render lại
 
 ## Syntax: import {memo} from "react",...., export default memo (components)
+
+---
 
 # 7. useMemo()
 
@@ -409,6 +429,8 @@ vẫn bị render lại
 
 -> useCallback lưu vào bộ nhớ 1 function
 -> useMemo lưu vào bộ nhớ 1 giá trị
+
+---
 
 # 8. useReducer
 
@@ -443,6 +465,8 @@ vẫn bị render lại
    và thực hiện chúng trong một lần cập nhật duy nhất
    -> Giusp giảm số lần render lại không cần thiết và tăng hiệu suất
 
+---
+
 # Cách hoạt động:
 
 -> Khi nhiều thay đổi trạng thái (state updates) được gọi trong cùng một sự kiện hoặc luồng xử lý,
@@ -454,22 +478,30 @@ React sẽ nhóm chúng lại (batch) thay vì thực hiện từng thay đổi 
 -> Promise hoặc async/await
 -> API callback không thuộc React (vd: WebSocket, fetch)
 
+---
+
 # Cơ chế Batch Updates trong React 18+
 
 -> Kể từ React 18, batch updates được mở rộng cho cả:
 -> Các cập nhật trạng thái ngoài sự kiện đồng bộ.
 -> Asynchronous updates (Promise, async/await).
 
+---
+
 # Khi nào cần flushSync?
 
 -> Nếu bạn muốn áp dụng cập nhật ngay lập tức mà không đợi batch updates:
 -> Sử dụng flushSync khi bạn cần phản hồi UI ngay lập tức, nhưng cần cẩn thận vì nó có thể ảnh hưởng đến hiệu suất.
+
+---
 
 # Lý do Batch Updates không xảy ra trong bối cảnh bất đồng bộ
 
 -> React sử dụng cơ chế batching để gom nhóm các thay đổi xảy ra trong một React event loop (như onClick, onChange).
 -> Tuy nhiên, khi các thay đổi trạng thái xảy ra ngoài sự kiện này (bất đồng bộ), React không thể tự động nhóm các thay đổi lại,
 dẫn đến việc mỗi lần gọi setState sẽ gây ra một lần render riêng biệt.
+
+---
 
 # Example:
 
@@ -495,11 +527,15 @@ dẫn đến việc mỗi lần gọi setState sẽ gây ra một lần render r
 -> Khi sử dụng REACT để truyền được "data" giữa các "component" ta phải truyền lên "App" sau đó mới truyền sang các "component" khác.
 -> Khi có nhiều " component" thì sẻ làm cấu trúc của "App" bị rối
 
+---
+
 # 02. Lý do ra đời của Redux
 
 ![Mô tả Redux](Docs/Sources/Images/redux-store.png)
 -> Do yêu cầu cho các ứng dụng single-page sử dụng Javascript ngày càng trở lên phức tạp thì code của chúng ta phải quản lý nhiều state hơn.
 -> "State" có thể bao gồm là "data" trả về từ phía "Server" và được "cached" lại hay nhữ dữ liệu được tạo ra từ phía "Client" mà chưa được đẩy lên "Server"
+
+---
 
 # 03. Khái niệm về Redux
 
@@ -508,6 +544,8 @@ dẫn đến việc mỗi lần gọi setState sẽ gây ra một lần render r
 
 -> "Redux" là 1 thư viện được viết bằng Javascript
 -> "Redux" dùng để quản lý "state" của toàn bộ ứng dụng <=> Tương tự việc khai báo 1 biến "global" để sử dụng ở nhiều nơi
+
+---
 
 # 04. Cách thức hoạt động của Redux
 
@@ -524,6 +562,8 @@ dẫn đến việc mỗi lần gọi setState sẽ gây ra một lần render r
 Sau khi một "action" được thực thi "dispathcer" sẻ được kích hoạt và gửi đến "reducer" một "action"
 "Reducer" thực hiện hành động dựa vào "action" gửi đến
 Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả về "state" mới đó
+
+---
 
 # 05. Các bước sử dụng Redux
 
@@ -550,6 +590,8 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 -> Khi người dùng thực hiện các hành động như nhấn vào liên kết,... => Router sẻ chuyển đổi điều hướng giữa các trang mà không cần "reload" lại website
 -> React Router là 1 thư viện được viết bằng React để quản lý routing trong các ứng dụng web
 
+---
+
 # 02. Các thành phần chính của Router trong ReactJS
 
 ## BrowserRouter:
@@ -558,6 +600,8 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 -> Là 1 thành phần sử dụng để bọc toàn bộ ứng dụng ReactJS
 -> import và bọc lại component <App/>
 -> Nó sử dụng HTML5 history API để giữ cho URL được đồng bộ với trạng thái ứng dụng
+
+---
 
 ## Route:
 
@@ -571,11 +615,15 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 - element ="" -> components muốn hiển thị
   ![ Route](./Docs/Sources/Images/image-4.png)
 
+---
+
 ## Routes:
 
 -> Cung cấp các tuyến đường "routes" dùng để điều hướng các thành phần của ứng dụng React
 -> Dùng để bọc bên ngoài danh sách các Route
 -> Tương tụ cấu trúc <ul><li></li></ul> để bọc các route
+
+---
 
 ## Link:
 
@@ -584,16 +632,22 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 -> Tương tự thẻ <a>
 -> Trang web chỉ render lại những phần cần thiết.
 
+---
+
 ## Outlet:
 
 ![Outlet](image-4.png)
 -> Sử dụng để xác định vị trí mà component trong route được hiển thị
 -> Gioosng với {props.children} trong React
 
+---
+
 ## NavLink:
 
 ![Ví dụ](image-5.png)
 -> Tương tự thẻ Link trong Route nhưng nếu URL trùng với link của NavLink thì nó sẻ thêm class"active"
+
+---
 
 ## Redirec:
 
@@ -601,11 +655,15 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 -> Redirect là một thành phần được sử dụng để chuyển hướng người dùng từ một đường dẫn khác.
 -> Nếu người dùng truy cập đường dẫn được xác định trong Redirect, họ sẽ được chuyển hướng đến địa chỉ mới.
 
+---
+
 ## Navigate:
 
 -> Sử dụng Navigate để tự động chuyển hướng đến một trang nào đó
 
 # 03. Cách sử dụng "components" của React-Router
+
+---
 
 # 04. Nested Routes
 
@@ -613,6 +671,8 @@ Sau đó lưu lại giá trị của "state" mới vào trong "store" và trả 
 -> Tạo ra các route lồng nhau
 VD: https://domain.com/blog/new
 VD: https://domain.com/blog/lasted
+
+---
 
 # 05. Index routes
 
@@ -624,10 +684,14 @@ VD: https://domain.com/blog/lasted
 -> Nên dùng khi có layout chung (<Outlet />).
 -> Nên dùng khi cần một trang mặc định trong route cha.
 
+---
+
 # 06. Dynamic routes
 
 ![Dynamic routes](image-10.png),![Dynamic routes](image-11.png)
 -> Giúp chúng ta tạo ra các "route" động
+
+---
 
 # 07. Hooks của React-Router
 
@@ -643,6 +707,8 @@ VD: https://domain.com/blog/lasted
 -> useNavigate: với giá trị âm sẻ đi lùi về trước, còn giá trị dương sẻ đi tiến về sau
 -> Tương tự button back và next trên browser
 
+---
+
 # 08. Protected routes
 
 ![Protected routes](image-16.png),![Protected routes](image-17.png)
@@ -654,6 +720,8 @@ VD: https://domain.com/blog/lasted
 - Nếu đăng nhập rồi -> xem được tất cả link của "public" và "private"....
 - Nếu chưa thì chỉ truy cập được các trang thuộc "public",nếu vẫn cố truy cập các trang "private" thì chuyển hướng họ tới trang login
 
+---
+
 # 09. Route Objects
 
 ![Route Objects](image-20.png),![Route Objects](image-21.png),![Route Objects](image-22.png)
@@ -662,3 +730,53 @@ VD: https://domain.com/blog/lasted
 -> Hook[useRoutes] dùng để xác định các tuyến route dưới dạng Object thuần javascript thay cho <Routes> và <Route>
 -> Tạo thành một mảng chứa các Obj với các key: path,element,children(con của element)
 -> Sau đó import hook[useRoutes] -> lưu mảng chứa các routes và converts mảng đó
+
+---
+
+### -------------------------------- Ant Design --------------------------------
+
+# `Buổi 01:`
+
+## **01: `Giới thiệu và cài đặt`**
+
+### Giới thiệu:
+
+- <i>Ant Design là một <b> `thư viện` </b> để xây dựng UI</i>
+- <i>Ant Design cung cấp nhiều <b>`Components`</b> để xây dựng website chất lượng cao và dễ bảo trì </i>
+- <i>Được phát triển bởi <b>`Alibaba`</b></i>
+- <i></i>
+
+### Cài đặt:
+
+- <i>Link website: <a><b>`https://ant.design/`</b></a></i>
+- <i>Link npm: <a><b>`https://www.npmjs.com/search?q=antd`</b></a></i>
+- <i>Lệnh cài đặt: <b>`npm i antd`</b> </i>
+
+## **02: Component: `Button`**
+
+![Thuộc tính button](./Docs/Sources/Images/image-23.png)
+
+## **03: Component: `Icon`**
+
+![Thuộc tính Icon](./Docs/Sources/Images/image-23.png)
+
+## **04: Component: `Typography`**
+
+![Thuộc tính Typography](./Docs/Sources/Images/image-24.png)
+
+## **05: Component: `Grid`**
+
+![Thuộc tính Grid-Row](./Docs/Sources/Images/image-25.png)
+![Thuộc tính Grid-Col](./Docs/Sources/Images/image-26.png)
+
+## **06: Component: `Layout`**
+
+## **07: Component: `Dropdown`**
+
+## **08: Component: `Menu`**
+
+## **Bài tập**
+
+## <b>Link demo: <a>`https://enlink.themenate.net/dashboard/default`</a></b>
+
+# `Buổi 02:`

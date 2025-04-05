@@ -1,0 +1,18 @@
+.box {
+  color: #fff;
+  background: #00aaff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+  /* margin-bottom: 10px; */
+}
+
+.block {
+  background: #3fc968;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  /* margin-bottom: 10px; */
+}
