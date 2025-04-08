@@ -771,9 +771,30 @@ VD: https://domain.com/blog/lasted
 
 ## **06: Component: `Layout`**
 
+- <i>Dùng để xử lý bố cục tổng thê của một trang web</i>
+- <i>Các <b>`Component`</b> của Layout:</i>
+- <b>`Layout:`</b>
+- <i>Bao boc toàn bộ bố cục (tương tự thẻ `section` trong `HTML`) </i>
+- <i>Bên trong có thể chứa các `component`: `Header, Sider, Content, Footer hoặc lồng một Layout khác`</i>
+- <b>`Header:`</b>
+- <i>Là header của trang (tương tự thẻ `header`)</i>
+- <b>`Sider:`</b>
+- ![Thuộc tính Sider](./Docs/Sources/Images/image-27.png)
+- <i>Là menu bên trái của trang (tương tự thẻ `aside`)</i>
+- <b>`Content:`</b>
+- <i>Chứa toàn bộ nội dung của trang (tương tự thẻ `main`)</i>
+- <b>`Footer:`</b>
+- <i>Là chân trang (tương tư thẻ `footer`)</i>
+
 ## **07: Component: `Dropdown`**
 
+- ![Thuộc tính Dropdown](./Docs/Sources/Images/image-28.png)
+
 ## **08: Component: `Menu`**
+
+- ![Thuộc tính Menu](./Docs/Sources/Images/image-29.png)
+- ![Thuộc tính Menu](./Docs/Sources/Images/image-30.png)
+- ![Thuộc tính Menu](./Docs/Sources/Images/image-31.png)
 
 ## **Bài tập**
 

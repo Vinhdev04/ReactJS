@@ -1,12 +1,13 @@
 import "./App.css";
-import GridLayout from "./components/GridLayout";
-
+import AllRoutes from "./components/AllRoutes";
 function App() {
   return (
     <>
       {/* <ButtonAntd /> */}
       {/* <TypographyAntd /> */}
-      <GridLayout />
+      {/* <GridLayout /> */}
+      {/* <LayoutDefault /> */}
+      <AllRoutes />
     </>
   );
 }
